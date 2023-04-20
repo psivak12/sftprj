@@ -28,7 +28,7 @@ def get_data():
 def add_sentiment():
     for doc in collection.find():
         review = doc['Response']
-        polarity = TextBlob(review).sentiment.polarity
+        polarity = TextBlob(review).sentiment.polar     ity
         collection.update_one(
             {'_id': doc['_id']},
             {'$set': {'sentiment_polarity': polarity}}
@@ -37,6 +37,7 @@ def add_sentiment():
 
 
 if __name__ == '__main__':
-    app.run(debug=False,Host='0.0.0.0')
+    app.run(debug=False)
+    #app.run(debug=False,Host='0.0.0.0')
 
 
