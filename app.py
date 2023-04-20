@@ -37,7 +37,7 @@ def add_sentiment():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run()
     #app.run(debug=False,Host='0.0.0.0')
 
 
