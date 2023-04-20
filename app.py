@@ -8,9 +8,11 @@ from flask import request
 from flask import jsonify
 from textblob import TextBlob
 from pymongo import MongoClient
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 client = MongoClient("mongodb+srv://bitdigitsurveys:bitdigitsurveys@cluster0.dzcak.mongodb.net/")
 db = client["test"]
 collection = db["surveysResponses"]
